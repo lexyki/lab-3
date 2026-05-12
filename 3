@@ -1,0 +1,38 @@
+def reverse_number(n):
+    """Повертає число, записане у зворотному порядку."""
+    reversed_str = str(n)[::-1]
+    return int(reversed_str)
+
+
+def is_palindrome(n):
+    """Повертає True, якщо число є паліндромом. Викликає reverse_number."""
+    return n == reverse_number(n)
+
+
+def count_divisors(n):
+    """Повертає кількість дільників числа."""
+    count = 0
+    for i in range(1, n + 1):
+        if n % i == 0:
+            count += 1
+    return count
+
+
+def print_report(n, reversed_n, palindrome, divisors):
+    """Виводить усі результати аналізу числа."""
+    print(f"\n=== Аналіз числа {n} ===")
+    print(f"Зворотній запис:  {reversed_n}")
+    print(f"Паліндром:        {'Так' if palindrome else 'Ні'}")
+    print(f"Кількість дільників: {divisors}")
+
+
+# --- Основна програма ---
+n = int(input("Введіть ціле додатнє число: "))
+
+if n <= 0:
+    print("Помилка: число повинно бути додатнім!")
+else:
+    rev = reverse_number(n)
+    pal = is_palindrome(n)
+    div = count_divisors(n)
+    print_report(n, rev, pal, div)
