@@ -1,0 +1,42 @@
+import math
+
+
+def circle_area(radius):
+    """Повертає площу кола за радіусом."""
+    return math.pi * radius ** 2
+
+
+def rectangle_area(width, height):
+    """Повертає площу прямокутника."""
+    return width * height
+
+
+def triangle_area(base, height):
+    """Повертає площу трикутника."""
+    return 0.5 * base * height
+
+
+# --- Основна програма ---
+print("Калькулятор площі фігур")
+print("1 — Коло")
+print("2 — Прямокутник")
+print("3 — Трикутник")
+
+choice = int(input("Оберіть фігуру (1-3): "))
+
+if choice == 1:
+    r = float(input("Введіть радіус: "))
+    result = circle_area(r)
+    print(f"Площа кола: {result:.2f}")
+elif choice == 2:
+    w = float(input("Введіть ширину: "))
+    h = float(input("Введіть висоту: "))
+    result = rectangle_area(w, h)
+    print(f"Площа прямокутника: {result:.2f}")
+elif choice == 3:
+    b = float(input("Введіть основу: "))
+    h = float(input("Введіть висоту: "))
+    result = triangle_area(b, h)
+    print(f"Площа трикутника: {result:.2f}")
+else:
+    print("Помилка: невірний вибір!")
